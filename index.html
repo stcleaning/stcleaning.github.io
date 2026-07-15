@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S&amp;T Cleaning — Move-Out Cleaning in Boulder, CO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&family=Martian+Mono:wght@300..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFBF9;
+    --ink:#14181B;
+    --slate:#5C6670;
+    --pine:#0E5135;
+    --mint:#D8EDE0;
+    --rule:#E3E5E2;
+    --signal:#E4572E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Public Sans',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  :focus-visible{outline:2px solid var(--pine);outline-offset:3px;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  .display{
+    font-family:'Archivo',system-ui,sans-serif;
+    font-variation-settings:'wdth' 118,'wght' 800;
+    text-transform:uppercase;
+    line-height:0.92;
+    letter-spacing:-0.02em;
+  }
+  .mono{
+    font-family:'Martian Mono','SF Mono',monospace;
+    font-variation-settings:'wght' 400;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+  }
+
+  /* ── header ── */
+  .site-head{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,251,249,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .head-bar{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .wordmark{
+    font-family:'Archivo',sans-serif;
+    font-variation-settings:'wdth' 125,'wght' 800;
+    font-size:17px;letter-spacing:0.02em;text-transform:uppercase;
+  }
+  .wordmark span{color:var(--pine);}
+  .head-nav{display:flex;gap:26px;}
+  .head-nav a{font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);}
+  .head-nav a:hover{color:var(--ink);}
+  .head-call{
+    font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.08em;
+    background:var(--ink);color:var(--paper);padding:9px 14px;border-radius:2px;
+  }
+  @media(max-width:760px){.head-nav{display:none;}}
+
+  /* ── hero ── */
+  .hero{padding:76px 0 64px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .kicker{color:var(--pine);display:flex;align-items:center;gap:9px;margin-bottom:20px;}
+  .kicker::before{content:"";width:20px;height:2px;background:var(--pine);}
+  .hero h1{font-size:clamp(44px,6.4vw,78px);}
+  .hero h1 .cash{
+    color:var(--pine);
+    background:linear-gradient(transparent 62%, var(--mint) 62%);
+  }
+  .hero-sub{margin-top:22px;font-size:18px;color:var(--slate);max-width:400px;}
+  .hero-cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.06em;
+    padding:15px 22px;border-radius:2px;display:inline-block;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:var(--pine);color:var(--paper);}
+  .btn-solid:hover{background:#0a3f29;}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+
+  /* ── inspection card (signature) ── */
+  .report{
+    background:#fff;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    box-shadow:0 1px 0 var(--rule), 0 18px 40px -24px rgba(20,24,27,.35);
+    transform:rotate(-1.1deg);
+  }
+  .report-head{
+    padding:16px 20px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .report-head .t{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 110,'wght' 700;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+  .report-head .d{color:var(--slate);}
+  .report-body{padding:8px 20px 14px;}
+  .rline{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:11px 0;border-bottom:1px dashed var(--rule);font-size:14px;
+  }
+  .rline:last-child{border-bottom:none;}
+  .pass{
+    font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;
+    color:var(--pine);background:var(--mint);padding:3px 8px;border-radius:2px;
+  }
+  .report-foot{
+    background:var(--ink);color:var(--paper);
+    padding:14px 20px;display:flex;justify-content:space-between;align-items:center;
+    border-radius:0 0 2px 2px;
+  }
+  .report-foot .lbl{font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9aa4ad;}
+  .report-foot .amt{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 110,'wght' 800;font-size:22px;color:#7FD1A4;}
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:40px;}
+    .report{transform:none;}
+  }
+
+  /* ── sale strip ── */
+  .strip{background:var(--ink);color:var(--paper);}
+  .strip-in{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:15px 0;font-size:15px;}
+  .strip-tag{
+    font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.12em;
+    background:var(--signal);color:#fff;padding:5px 9px;border-radius:2px;white-space:nowrap;
+  }
+
+  /* ── sections ── */
+  .sec{padding:84px 0;}
+  .sec-label{color:var(--pine);margin-bottom:12px;}
+  .sec h2{font-size:clamp(28px,3.6vw,44px);}
+  .sec-intro{margin-top:14px;color:var(--slate);max-width:460px;}
+
+  /* ── checklist ── */
+  .check-grid{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px 32px;}
+  .room h3{
+    font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 112,'wght' 700;
+    font-size:13px;text-transform:uppercase;letter-spacing:0.1em;
+    padding-bottom:10px;border-bottom:2px solid var(--ink);
+  }
+  .room ul{list-style:none;margin-top:6px;}
+  .room li{
+    display:flex;align-items:flex-start;gap:11px;
+    padding:9px 0;font-size:15px;border-bottom:1px solid var(--rule);
+  }
+  .box{
+    width:16px;height:16px;flex-shrink:0;margin-top:3px;
+    border:1.5px solid var(--slate);border-radius:2px;position:relative;
+  }
+  .box::after{
+    content:"";position:absolute;left:4px;top:0px;
+    width:5px;height:10px;border:solid var(--paper);
+    border-width:0 2px 2px 0;transform:rotate(45deg) scale(0);
+    transition:transform .18s ease;
+  }
+  .ticked .box{background:var(--pine);border-color:var(--pine);}
+  .ticked .box::after{transform:rotate(45deg) scale(1);}
+  @media(prefers-reduced-motion:reduce){
+    .box::after{transition:none;}
+    html{scroll-behavior:auto;}
+    .btn{transition:none;}
+  }
+
+  /* ── pricing ── */
+  .price-sec{background:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+  .prices{margin-top:40px;}
+  .prow{
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+    padding:24px 0;border-top:1px solid var(--rule);
+  }
+  .prow:last-child{border-bottom:1px solid var(--rule);}
+  .prow .nm{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 108,'wght' 700;font-size:20px;text-transform:uppercase;letter-spacing:0.01em;}
+  .prow .dt{font-size:13px;color:var(--slate);margin-top:3px;}
+  .prow .amt{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 100,'wght' 800;font-size:30px;color:var(--pine);white-space:nowrap;}
+  .price-note{margin-top:20px;font-size:13px;color:var(--slate);}
+
+  /* ── about ── */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .facts{list-style:none;}
+  .facts li{padding:16px 0;border-bottom:1px solid var(--rule);font-size:15px;display:flex;gap:14px;}
+  .facts li:first-child{border-top:1px solid var(--rule);}
+  .facts .k{font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);width:96px;flex-shrink:0;padding-top:4px;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:36px;}}
+
+  /* ── footer ── */
+  .foot{background:var(--pine);color:var(--paper);}
+  .foot-in{padding:76px 0;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;}
+  .foot h2{font-size:clamp(30px,4vw,50px);color:var(--paper);}
+  .foot .note{font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A9CFBB;margin-top:12px;}
+  .foot-phone{
+    font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 112,'wght' 800;
+    font-size:clamp(26px,3.4vw,38px);color:#fff;display:block;
+  }
+  .foot-phone:hover{color:var(--mint);}
+  .foot-sub{font-size:13px;color:#A9CFBB;margin-top:6px;text-align:right;}
+  .legal{border-top:1px solid rgba(255,255,255,.16);padding:18px 0;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#A9CFBB;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  @media(max-width:640px){
+    .foot-in{flex-direction:column;align-items:flex-start;}
+    .foot-sub{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-bar">
+    <a href="#top" class="wordmark">S&amp;T <span>Cleaning</span></a>
+    <nav class="head-nav">
+      <a href="#checklist">Checklist</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="tel:7206591149" class="head-call">(720) 659-1149</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker mono">Move-out cleaning · Boulder, CO</div>
+        <h1 class="display">Leave it<br>spotless.<br><span class="cash">Keep the<br>deposit.</span></h1>
+        <p class="hero-sub">We clean apartments on turnover day the way landlords inspect them — top to bottom, checklist in hand.</p>
+        <div class="hero-cta">
+          <a href="tel:7206591149" class="btn btn-solid">Call to book</a>
+          <a href="#pricing" class="btn btn-ghost">See pricing</a>
+        </div>
+      </div>
+
+      <div class="report" aria-label="Example move-out inspection report">
+        <div class="report-head">
+          <div class="t">Move-Out Inspection</div>
+          <div class="d mono">Unit 4B</div>
+        </div>
+        <div class="report-body">
+          <div class="rline"><span>Kitchen appliances</span><span class="pass">Pass</span></div>
+          <div class="rline"><span>Cabinets &amp; drawers</span><span class="pass">Pass</span></div>
+          <div class="rline"><span>Bathroom</span><span class="pass">Pass</span></div>
+          <div class="rline"><span>Carpets</span><span class="pass">Pass</span></div>
+          <div class="rline"><span>Baseboards &amp; tracks</span><span class="pass">Pass</span></div>
+        </div>
+        <div class="report-foot">
+          <div class="lbl">Deductions</div>
+          <div class="amt">$0.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span class="strip-tag">Move-Out Sale</span>
+      <span>Studio &amp; 1BR — $200 flat, move-out or move-in, each.</span>
+    </div>
+  </div>
+
+  <section class="sec wrap" id="checklist">
+    <div class="sec-label mono">What gets cleaned</div>
+    <h2 class="display">The whole checklist</h2>
+    <p class="sec-intro">Every line below is included in a standard clean. Nothing gets skipped, and nothing gets added to your bill later.</p>
+
+    <div class="check-grid">
+      <div class="room">
+        <h3>Kitchen</h3>
+        <ul>
+          <li><span class="box"></span>Oven interior</li>
+          <li><span class="box"></span>Refrigerator interior</li>
+          <li><span class="box"></span>Cabinets, inside and out</li>
+          <li><span class="box"></span>Countertops &amp; backsplash</li>
+          <li><span class="box"></span>Sink &amp; fixtures</li>
+        </ul>
+      </div>
+      <div class="room">
+        <h3>Bathroom</h3>
+        <ul>
+          <li><span class="box"></span>Tub &amp; shower</li>
+          <li><span class="box"></span>Toilet</li>
+          <li><span class="box"></span>Vanity &amp; mirror</li>
+          <li><span class="box"></span>Tile &amp; grout wipe-down</li>
+        </ul>
+      </div>
+      <div class="room">
+        <h3>Living &amp; bedrooms</h3>
+        <ul>
+          <li><span class="box"></span>Carpet vacuuming</li>
+          <li><span class="box"></span>Closet shelves &amp; rods</li>
+          <li><span class="box"></span>Window tracks &amp; sills</li>
+          <li><span class="box"></span>Hard floors</li>
+        </ul>
+      </div>
+      <div class="room">
+        <h3>Throughout</h3>
+        <ul>
+          <li><span class="box"></span>Baseboards</li>
+          <li><span class="box"></span>Doors &amp; frames</li>
+          <li><span class="box"></span>Switches &amp; outlet plates</li>
+          <li><span class="box"></span>Trash removed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec price-sec" id="pricing">
+    <div class="wrap">
+      <div class="sec-label mono">Flat-rate pricing</div>
+      <h2 class="display">One price. Told up front.</h2>
+      <div class="prices">
+        <div class="prow">
+          <div>
+            <div class="nm">Studio / 1 bedroom</div>
+            <div class="dt">Up to 700 sq ft · move-out or move-in</div>
+          </div>
+          <div class="amt">$200</div>
+        </div>
+        <div class="prow">
+          <div>
+            <div class="nm">2 bedroom apartment</div>
+            <div class="dt">700–1,500 sq ft</div>
+          </div>
+          <div class="amt">$310</div>
+        </div>
+        <div class="prow">
+          <div>
+            <div class="nm">3 bedroom house</div>
+            <div class="dt">1,500–2,200 sq ft</div>
+          </div>
+          <div class="amt">$390</div>
+        </div>
+      </div>
+      <p class="price-note">Larger homes and heavy-condition units are quoted after a quick call. No hourly billing, no surprise line items.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="about">
+    <div class="about-grid">
+      <div>
+        <div class="sec-label mono">About</div>
+        <h2 class="display">Two people.<br>Boulder born.</h2>
+        <p class="sec-intro">S&amp;T Cleaning is a small, locally owned outfit built around one job: turnover cleans that pass inspection the first time. We live here, one of us went to CU, and we know exactly what a Boulder property manager looks for on walkthrough day. You deal with us directly — the same people who show up are the ones who answer the phone.</p>
+      </div>
+      <ul class="facts">
+        <li><span class="k">Serves</span><span>Boulder only — CU campus area and surrounding neighborhoods</span></li>
+        <li><span class="k">Books</span><span>Same-week turnover slots, including lease-end weekends</span></li>
+        <li><span class="k">Billing</span><span>Flat rate quoted before we start</span></li>
+        <li><span class="k">Contact</span><span>Call or text (720) 659-1149</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <h2 class="display">Book your<br>move-out clean</h2>
+      <div class="note">Lease-end dates fill fast</div>
+    </div>
+    <div>
+      <a href="tel:7206591149" class="foot-phone">(720) 659-1149</a>
+      <div class="foot-sub">Call or text to schedule</div>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <span>S&amp;T Cleaning · Boulder, Colorado</span>
+    <span>Move-out &amp; move-in cleaning · Boulder only</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var items = document.querySelectorAll('.room li');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function(li){ li.classList.add('ticked'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var group = e.target;
+        var lis = group.querySelectorAll('li');
+        lis.forEach(function(li, i){
+          setTimeout(function(){ li.classList.add('ticked'); }, i * 90);
+        });
+        obs.unobserve(group);
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll('.room').forEach(function(r){ obs.observe(r); });
+  })();
+</script>
+
+</body>
+</html>
